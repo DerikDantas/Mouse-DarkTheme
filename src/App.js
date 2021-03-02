@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { GlobalStyles } from "./Styles/GlobalStyles.js";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./theme";
 
-function App() {
+import Nav from './Components/Nav/index'
+import Main from "./Components/Main/index.js";
+import Spech from "./Components/Main-Specs/index.js";
+
+export const App = (props) => {
+  const [theme, setTheme] = useState("light")
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      window.localStorage.setItem("theme", "dark");
+      setTheme("dark")
+    } else {
+      window.localStorage.setItem("theme", "light");
+      setTheme("light")
+    }
+  }
+
+  useEffect(() => {
+    const localTheme = window.localStorage.getItem("theme");
+    localTheme && setTheme(localTheme);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <Nav toggleTheme={toggleTheme} theme={theme} />
+        
+        <Main />
+
+        <Spech />
+
+        <GlobalStyles />
+    </ThemeProvider>
   );
 }
+
+
 
 export default App;
