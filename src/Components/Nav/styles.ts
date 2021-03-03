@@ -42,4 +42,16 @@ export const Container = styled.div`
     border-radius: 10px;
     padding: 5px 15px;
   }
+
+  @media(max-width: 768px){
+
+    .col-xs-12{
+      text-align: center
+    }
+
+    h1{
+      font-size: 20px
+    }
+    
+  }
 `;

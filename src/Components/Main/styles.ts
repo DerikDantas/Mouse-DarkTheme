@@ -97,4 +97,34 @@ export const Container = styled.div`
     right: -500px;
     z-index: 1
   }
+
+  @media(max-width: 768px){
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .titulo-fundo{
+      position: relative;
+      height: auto;
+      font-size: 45px;
+    }
+    
+    img{
+      width: 50%;
+      text-align: center;
+    }
+    h2{
+      font-size: 15px!important
+    }
+    a.btn-buy > img{
+      width: 30px;
+    }
+
+    .circles, .barra-1, .barra-2{
+      display: none;
+    }
+  }
 `;

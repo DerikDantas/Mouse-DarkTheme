@@ -11,6 +11,8 @@ export const GlobalStyles = createGlobalStyle`
     div#root {
         width: 100%;
         height: 100%;
+        overflow-x: hidden!important;
+
     }
 
     body {
@@ -21,6 +23,11 @@ export const GlobalStyles = createGlobalStyle`
         transition: all 0.25s linear;
         overflow-x: hidden!important;
 
+    }
+    @media(max-width: 768px){
+        div#root{
+            
+        }
     }
 `
 

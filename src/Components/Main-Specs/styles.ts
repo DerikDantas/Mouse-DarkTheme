@@ -19,4 +19,15 @@ export const Container = styled.div`
     td > span > p{
         color: #7E7E7E!important;
     }
+
+    @media(max-width: 768px){
+        margin-top: 35px;
+
+        tr{
+            height: auto;
+        }
+        td{
+            font-size: 15px;
+        }
+    }
 `;

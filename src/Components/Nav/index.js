@@ -10,10 +10,10 @@ function Nav({ toggleTheme, theme }) {
     <>
       <Container>
         <div className="container row nav-row">
-          <div className="col-6">
+          <div className="col-md-6 col-xs-12">
             <h1>AI MOUSE</h1>
           </div>
-          <div className="col-6 linha-links">
+          <div className="col-md-6 col-xs-12 linha-links">
             <a href="/">Home</a>
             <a href="/">About</a>
             <a href="/">Shop</a>
